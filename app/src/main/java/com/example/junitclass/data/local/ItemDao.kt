@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
-interface ItemDAO {
+interface ItemDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCartItem(item: Item)
+    fun insertCartItem(item: Item)
 
     @Delete
-    suspend fun deleteCartItem(item: Item)
+    fun deleteCartItem(item: Item)
 
     @Query("SELECT * FROM items")
     fun observeAllItems(): LiveData<List<Item>>
