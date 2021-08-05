@@ -7,13 +7,13 @@ import androidx.room.*
 interface ItemDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertCartItem(item: Item)
+    fun insertItem(item: Item)
 
     @Delete
-    fun deleteCartItem(item: Item)
+    fun deleteItem(item: Item)
 
     @Query("SELECT * FROM items")
-    fun observeAllItems(): LiveData<List<Item>>
+    fun observeItems(): LiveData<List<Item>>
 
     @Query("SELECT SUM(price * quantity) FROM items")
     fun observeTotalPrice(): LiveData<Float>

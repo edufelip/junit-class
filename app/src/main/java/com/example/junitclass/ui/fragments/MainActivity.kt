@@ -1,7 +1,8 @@
-package com.example.junitclass
+package com.example.junitclass.ui.fragments
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.junitclass.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
