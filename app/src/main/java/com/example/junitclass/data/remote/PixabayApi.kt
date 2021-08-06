@@ -6,7 +6,7 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface PixaBayAPI {
+interface PixabayApi {
     @GET("/api/")
     suspend fun searchImage(
         @Query("q") searchQuery: String,

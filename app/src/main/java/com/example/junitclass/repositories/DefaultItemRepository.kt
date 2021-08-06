@@ -3,16 +3,17 @@ package com.example.junitclass.repositories
 import androidx.lifecycle.LiveData
 import com.example.junitclass.data.local.Item
 import com.example.junitclass.data.local.ItemDao
-import com.example.junitclass.data.remote.PixaBayAPI
+import com.example.junitclass.data.remote.PixabayApi
 import com.example.junitclass.data.remote.responses.ImageResponse
 import com.example.junitclass.others.Resource
-import retrofit2.Response
 import java.lang.Exception
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class DefaultItemRepository @Inject constructor(
     private val itemDao: ItemDao,
-    private val pixaBayAPI: PixaBayAPI
+    private val pixabayApi: PixabayApi
 ): IItemRepository {
     override suspend fun insertItem(item: Item) {
         itemDao.insertItem(item)
@@ -32,7 +33,7 @@ class DefaultItemRepository @Inject constructor(
 
     override suspend fun searchImage(imageQuery: String): Resource<ImageResponse> {
         return try {
-            val response = pixaBayAPI.searchImage(imageQuery)
+            val response = pixabayApi.searchImage(imageQuery)
             if(response.isSuccessful) {
                 response.body()?.let {
                     return@let Resource.success(it)
