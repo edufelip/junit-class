@@ -22,11 +22,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ImagePickFragment
-constructor(
+class ImagePickFragment @Inject constructor(
     val imageAdapter: ImageAdapter
 ) : Fragment(R.layout.fragment_image_pick) {
-//    val viewModel: ItemViewModel by activityViewModels()
     lateinit var viewModel: ItemViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

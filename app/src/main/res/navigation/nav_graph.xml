@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/cartFragment">
+    app:startDestination="@id/mainFragment">
     <fragment
-        android:id="@+id/cartFragment"
-        android:name="com.example.junitclass.ui.fragments.CartFragment"
-        android:label="CartFragment" >
+        android:id="@+id/mainFragment"
+        android:name="com.example.junitclass.ui.fragments.MainFragment"
+        android:label="MainFragment" >
         <action
-            android:id="@+id/action_cartFragment_to_addItemFragment"
+            android:id="@+id/action_mainFragment_to_addItemFragment"
             app:destination="@id/addItemFragment" />
     </fragment>
     <fragment

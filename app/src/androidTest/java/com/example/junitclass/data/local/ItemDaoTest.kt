@@ -3,8 +3,6 @@ package com.example.junitclass.data.local
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.filters.SmallTest
 import com.example.junitclass.getOrAwaitValue
-import com.example.junitclass.launchFragmentInHiltContainer
-import com.example.junitclass.ui.fragments.CartFragment
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
